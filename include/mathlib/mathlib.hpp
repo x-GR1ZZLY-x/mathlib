@@ -1,6 +1,8 @@
 #pragma once
 #include <limits.h>
 
+namespace mathlib{
+    
 inline int add(long long a, long long b, long long *result){
     if(b > 0 && a > LLONG_MAX - b){
         return 0;
@@ -129,4 +131,6 @@ inline int fact(long long n, long long *result){
     *result = n * prev;
 
     return 1;
+}
+
 }
