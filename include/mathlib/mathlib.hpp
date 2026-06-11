@@ -1,7 +1,7 @@
 #pragma once
 #include <limits.h>
 
-static int add(long long a, long long b, long long *result){
+inline int add(long long a, long long b, long long *result){
     if(b > 0 && a > LLONG_MAX - b){
         return 0;
     }
@@ -15,7 +15,7 @@ static int add(long long a, long long b, long long *result){
     return 1;
 }
 
-static int sub(long long a, long long b, long long *result){
+inline int sub(long long a, long long b, long long *result){
     if(b > 0 && a < LLONG_MIN + b){
         return 0;
     }
@@ -29,7 +29,7 @@ static int sub(long long a, long long b, long long *result){
     return 1;
 }
 
-static int mul(long long a, long long b, long long *result){
+inline int mul(long long a, long long b, long long *result){
     if(a == LLONG_MIN && b == -1){
         return 0;
     }
@@ -63,7 +63,7 @@ static int mul(long long a, long long b, long long *result){
     return 1;
 }
 
-static int div(long long a, long long b, long long *result){
+inline int div(long long a, long long b, long long *result){
     if(b == 0){
         return 0;
     }
@@ -76,7 +76,7 @@ static int div(long long a, long long b, long long *result){
     return 1;
 }
 
-static int pow(long long base, long long exp, long long *result){
+inline int pow(long long base, long long exp, long long *result){
     long long cur = 1;
     
     for(long long i = 0; i < exp; ++i){
@@ -109,7 +109,7 @@ static int pow(long long base, long long exp, long long *result){
     return 1;
 }
 
-static int fact(long long n, long long *result){
+inline int fact(long long n, long long *result){
     if(n < 0){
         return 0;
     }
